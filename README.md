@@ -92,6 +92,24 @@ The output is a JSON Schema file describing the structure of tasks, rules, and s
 }
 ```
 
+## Using In EE-DATA
+
+1. Create new folder (if not already present): `.vscode`
+2. Within `.vscode` add a new file: `settings.json`
+3. Then add the following:
+```
+{
+  "yaml.schemas": {
+    "/Users/eli/code/demeter/ppt-schema.json": [
+        "2*/**/master.yaml"
+    ],
+    "/Users/eli/code/demeter/word-schema.json": [
+        "3*/**/master.yaml"
+    ]
+  }
+}
+```
+
 ## Development
 
 - Source code is in the `src/` directory (TypeScript).
