@@ -1,6 +1,8 @@
-# jsdoc-to-jsonschema
+# Demeter: jsdoc-to-jsonschema
 
 ## Overview
+
+> Demeter is the Greek Goddess of the harvest. Just as ancient greeks would reap grain to store for the winter, this tool reaps data from our codebase to inform users how to correctly create task specs in our master.yaml files.    
 
 This project provides a CLI tool that scans JavaScript source files (specifically, "step-type" classes) for parameter definitions and JSDoc annotations, and generates a JSON Schema representing the structure and validation rules for those step-types. This is useful for automating the creation of schemas for educational or workflow tasks, such as those used in grading rubrics or automated checkers.
 
