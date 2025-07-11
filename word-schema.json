@@ -1,0 +1,645 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "The title of the task or item."
+    },
+    "text": {
+      "type": "string",
+      "description": "A description or instruction for the task."
+    },
+    "tasks": {
+      "type": "array",
+      "description": "An array of tasks or items to be checked when the student submits their work.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the task or item."
+          },
+          "id": {
+            "type": "string",
+            "description": "A unique identifier for the task or rule."
+          },
+          "text": {
+            "type": "string",
+            "description": "A description or instruction for the task."
+          },
+          "points": {
+            "type": "number",
+            "description": "The number of points assigned to the task or rule."
+          },
+          "rules": {
+            "type": "array",
+            "description": "An array of rules that apply to the task or item.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The name of the rule."
+                },
+                "id": {
+                  "type": "string",
+                  "description": "A unique identifier for the rule."
+                },
+                "points": {
+                  "type": "number",
+                  "description": "Points for this rule."
+                },
+                "steps": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "function"
+                    ],
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "text_box_passes"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "background_color": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_background_color_set": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "find_by": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "dimensions": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "horizontal_position": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "text_searcher": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "check_paragraph": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_inline": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "alignment": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "table_passes"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "row_count": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "column_count": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "min_row_count": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "min_column_count": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "cell_content": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "field_requirement": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "style": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "alignment": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "no_borders": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "find_by": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "width": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "style_passes"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "name": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "font": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "paragraph_passes"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "find_by": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "check_all": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "check_any": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "ignore": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "order_of_document_headings"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "headings": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "image_passes"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "background_color": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "find_by": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "dimensions": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "horizontal_position": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "vertical_position": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "effects": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "rotation": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "wrap_settings": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_inline": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "alignment": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "external_document_info"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {}
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "document_has_text"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "text_searcher": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "document_has_section_next_page"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "should_find": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "document_has_comment"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "text_searcher": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "should_not_find": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "document_has_columns"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "expected_section_count": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "expected_columns_in_a_section": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "document_does_not_have"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "spellings_or_grammar_errors": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "document_border"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "color": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "size_points": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "space": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "value": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "document_bg_color"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "color": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "has_a_bg_color_other_than_white": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "check_track_revisions"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "require_track_revisions": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "check_page_margins"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "left_margin_inches": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "right_margin_inches": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "top_margin_inches": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "bottom_margin_inches": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "check_mail_merge"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "require_query": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "check_external_docx"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "filename": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "document_text_content": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "chart_passes"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {}
+                          }
+                        }
+                      }
+                    ],
+                    "properties": {
+                      "function": {
+                        "enum": [
+                          "text_box_passes",
+                          "table_passes",
+                          "style_passes",
+                          "paragraph_passes",
+                          "order_of_document_headings",
+                          "image_passes",
+                          "external_document_info",
+                          "document_has_text",
+                          "document_has_section_next_page",
+                          "document_has_comment",
+                          "document_has_columns",
+                          "document_does_not_have",
+                          "document_border",
+                          "document_bg_color",
+                          "check_track_revisions",
+                          "check_page_margins",
+                          "check_mail_merge",
+                          "check_external_docx",
+                          "chart_passes"
+                        ],
+                        "description": "The function to execute for this step."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

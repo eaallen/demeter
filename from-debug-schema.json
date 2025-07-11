@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "The title of the task or item."
+    },
+    "text": {
+      "type": "string",
+      "description": "A description or instruction for the task."
+    },
+    "tasks": {
+      "type": "array",
+      "description": "An array of tasks or items to be checked when the student submits their work.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the task or item."
+          },
+          "id": {
+            "type": "string",
+            "description": "A unique identifier for the task or rule."
+          },
+          "text": {
+            "type": "string",
+            "description": "A description or instruction for the task."
+          },
+          "points": {
+            "type": "number",
+            "description": "The number of points assigned to the task or rule."
+          },
+          "rules": {
+            "type": "array",
+            "description": "An array of rules that apply to the task or item.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The name of the rule."
+                },
+                "id": {
+                  "type": "string",
+                  "description": "A unique identifier for the rule."
+                },
+                "points": {
+                  "type": "number",
+                  "description": "Points for this rule."
+                },
+                "steps": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "function"
+                    ],
+                    "allOf": [],
+                    "properties": {
+                      "function": {
+                        "enum": [
+                          "text_font",
+                          "text_color",
+                          "slide_transition",
+                          "slide_layout",
+                          "slide_is_removed",
+                          "slide_final_position",
+                          "slide_contains_text",
+                          "slide_auto_advance",
+                          "shape_size",
+                          "shape_position",
+                          "shape_geometric_shape",
+                          "presentation_is_kiosk",
+                          "presentation_has",
+                          "presentation_does_not_have",
+                          "inspect_smart_art",
+                          "inspect_chart",
+                          "image_size",
+                          "image_shape",
+                          "image_position",
+                          "has_bullet_points",
+                          "find_shape",
+                          "find_note",
+                          "find_comment",
+                          "find_audio",
+                          "custom_show_has_slides",
+                          "compare_text_format",
+                          "bullet_points_has_text"
+                        ],
+                        "description": "The function to execute for this step."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
