@@ -57,7 +57,707 @@
                     "required": [
                       "function"
                     ],
-                    "allOf": [],
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "text_font"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "texts": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "color": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "style": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "bold": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "italic": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "underline": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "text_color"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "texts": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "color": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "slide_transition"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "transition_name": {
+                                  "type": "string",
+                                  "description": "Description not specified in source code"
+                                },
+                                "all_slides": {
+                                  "type": "boolean",
+                                  "description": "Description not specified in source code"
+                                },
+                                "transition_duration_seconds": {
+                                  "type": "number",
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "slide_layout"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "has_name": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "slide_is_removed"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "original_slide_number": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "slide_final_position"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "is_at": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "find_slides_by_text": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "slide_contains_text"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "text": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "match_case": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "not_text": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "slide_auto_advance"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "all_slides": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "auto_advance_milliseconds": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "operator": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "shape_size"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "width": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "height": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "tolerance": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "shape_position"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "min_top": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "max_top": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "min_left": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "max_left": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "shape_geometric_shape"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "is": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "presentation_is_kiosk"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {}
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "presentation_has"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "words": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "match_case": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "expected_minimum_total": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "presentation_does_not_have"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "words": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "match_case": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "misspelled_words": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "ignore": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "inspect_smart_art"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "texts": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "contains_image": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "inspect_chart"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "data_labels_are_present": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "title_font": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "legend_font": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "axis_font": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "title_text": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "has_bullet_points"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {}
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "find_shape"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "custom_layout_name": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "slide_master_name": {
+                                  "type": "string",
+                                  "description": "Description not specified in source code"
+                                },
+                                "filter_for": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "position": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "text_content": {
+                                  "type": "string",
+                                  "description": "Description not specified in source code"
+                                },
+                                "text_font": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "geometric_shape": {
+                                  "type": "string",
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_image": {
+                                  "type": "boolean",
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_table": {
+                                  "type": "boolean",
+                                  "description": "Description not specified in source code"
+                                },
+                                "table_data": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_chart": {
+                                  "type": "boolean",
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_video": {
+                                  "type": "boolean",
+                                  "description": "Description not specified in source code"
+                                },
+                                "size": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "bullet_point_style": {
+                                  "type": "string",
+                                  "description": "Description not specified in source code"
+                                },
+                                "bullet_point_start_at": {
+                                  "type": "string",
+                                  "description": "Description not specified in source code"
+                                },
+                                "animation": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "shape_is_not_overlapping": {
+                                  "type": "boolean",
+                                  "description": "Description not specified in source code"
+                                },
+                                "has_animation": {
+                                  "type": "boolean",
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "find_note"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "text": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "find_comment"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "texts": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "ok_to_not_find_any_comments": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "find_audio"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "starts_automatically": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "does_not_overlap": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "show_when_stopped": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_all_slides": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "is_mute": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "volume_level": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "loop_until_stopped": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "custom_show_has_slides"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "custom_show_name": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "slide_numbers": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "strict_order": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "function": {
+                              "const": "bullet_points_has_text"
+                            }
+                          },
+                          "required": [
+                            "function"
+                          ]
+                        },
+                        "then": {
+                          "properties": {
+                            "params": {
+                              "properties": {
+                                "texts": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "match_case": {
+                                  "description": "Description not specified in source code"
+                                },
+                                "separate_bullets": {
+                                  "description": "Description not specified in source code"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ],
                     "properties": {
                       "function": {
                         "enum": [
@@ -77,16 +777,12 @@
                           "presentation_does_not_have",
                           "inspect_smart_art",
                           "inspect_chart",
-                          "image_size",
-                          "image_shape",
-                          "image_position",
                           "has_bullet_points",
                           "find_shape",
                           "find_note",
                           "find_comment",
                           "find_audio",
                           "custom_show_has_slides",
-                          "compare_text_format",
                           "bullet_points_has_text"
                         ],
                         "description": "The function to execute for this step."
